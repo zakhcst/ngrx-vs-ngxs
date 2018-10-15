@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store, Select } from '@ngxs/store';
-import { StartOver } from '../salad.actions';
+import { StartOver, RemoveTopping } from '../salad.actions';
 import { SaladState } from '../salad.state';
 import { ConfirmOrder } from '../../shared/app.actions';
 
@@ -24,6 +24,10 @@ export class SaladPageComponent implements OnInit {
 
   startOver() {
     this.store.dispatch( new StartOver() );
+  }
+
+  removeTopping(topping) {
+    this.store.dispatch( new RemoveTopping(topping) );
   }
 
 
